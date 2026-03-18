@@ -1,0 +1,536 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#ffffff;
+color:#333;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+background:#2aa52a;
+color:white;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.logo img{
+height:42px;
+}
+
+/* GLOBAL FONT SETTINGS */
+
+/* HEADINGS / BOLD TEXT */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+}
+
+/* BODY / PARAGRAPHS / LINKS */
+body, p, li, a {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight:400;
+}
+
+/* BUTTONS & STRONG TEXT */
+.button, strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+}
+
+/* NAVIGATION */
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+transition:0.3s;
+display:inline-block;
+}
+
+nav a:hover{
+color:#e6fff7;
+transform:scale(1.08);
+}
+
+/* HERO */
+
+.hero{
+background:#f4f7f6;
+padding:90px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+/* HERO LOGO WATERMARK */
+
+.hero-logo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+opacity:0.17;
+pointer-events:none;
+}
+
+.hero-logo img{
+width:320px;
+max-width:80%;
+}
+
+.hero h1{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.hero p{
+margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.button{
+background:#2aa52a;
+color:white;
+padding:12px 24px;
+border-radius:5px;
+text-decoration:none;
+font-size:14px;
+display:inline-block;
+transition:0.25s;
+}
+
+/* UPDATED BUTTON HOVER: background changes, zoom works, text color stays white */
+.button:hover{
+transform:scale(1.07);
+background:#1d781d;
+color:white; /* text color stays same */
+}
+
+.button:hover{
+text-decoration:none;
+}
+
+/* SECTIONS */
+
+.section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+margin-bottom:25px;
+color:#2aa52a;
+}
+
+/* CATALOG */
+
+.catalog{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
+
+.catalog-card{
+background:#fafafa;
+padding:18px;
+border-radius:6px;
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+/* Catalog images - better fit for A4 type */
+.catalog-card img{
+    width:100%;
+    max-height:200px;  /* new: limit height so tall images fit nicely */
+    object-fit:cover;  /* crop proportionally if needed */
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.catalog-card img:hover{
+    transform:scale(1.05);
+}
+
+.catalog-card h4{
+margin-top:10px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+background:#ffffff;
+padding:20px;
+margin-top:40px;
+box-shadow:0px -3px 10px rgba(0,0,0,0.08),
+0px 3px 10px rgba(0,0,0,0.08);
+overflow:hidden;
+}
+
+.testimonial-slider{
+display:flex;
+gap:60px;
+width:max-content;
+animation:slide 25s linear infinite;
+}
+
+.testimonial{
+width:320px;
+font-size:14px;
+color:#444;
+text-align:center;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+/* FOOTER */
+
+footer{
+background:#2aa52a;
+color:white;
+margin-top:50px;
+}
+
+.footer-container{
+max-width:1100px;
+margin:auto;
+padding:35px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.footer-section h4{
+margin-bottom:10px;
+}
+
+.footer-section a{
+color:white;
+text-decoration:none;
+display:block;
+margin-bottom:6px;
+font-size:14px;
+}
+
+.footer-section a:hover{
+text-decoration:underline;
+}
+
+.footer-bottom{
+text-align:center;
+padding:15px;
+border-top:1px solid rgba(255,255,255,0.3);
+font-size:13px;
+}
+
+/* CONTACT BOX */
+
+.contact-box{
+background:#f7f7f7;
+padding:30px;
+border-radius:6px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+max-width:600px;
+}
+
+/* TESTIMONIAL TITLE */
+
+.testimonial-title{
+text-align:center;
+margin-top:40px;
+margin-bottom:10px;
+}
+
+.testimonial-title h2{
+color:#2aa52a;
+font-size:26px;
+}
+
+/* CONTACT FLEX CONTAINER */
+.contact-flex-container{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap; /* for mobile */
+}
+
+/* Make contact box take most space */
+.contact-box{
+    flex:1 1 400px; /* grow, shrink, base 400px */
+    padding:25px;
+    background:#f4f4f4;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Logo next to it */
+.contact-logo{
+    flex:0 0 250px; /* fixed width for logo */
+    text-align:center;
+}
+
+.contact-logo img{
+    max-width:100%;
+    border-radius:8px;
+    opacity:0.9;
+    transition:0.3s;
+}
+
+.contact-logo img:hover{
+    transform:scale(1.05);
+    opacity:1;
+}
+
+/* BRAND LOGO SECTION */
+.brand-section{
+    text-align:center;
+    padding:60px 20px 40px 20px;
+}
+
+.brand-section img{
+    width:150px;  /* increased from 70px */
+    max-width:90%;
+    opacity:0.95;
+    transition:0.3s;
+}
+
+.brand-section img:hover{
+    transform:scale(1.05);
+    opacity:1;
+}
+
+.catalog-note{
+text-align:center;
+margin-top:40px;
+padding:25px;
+background:#f7f7f7;
+border-radius:6px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.catalog-note p{
+margin-bottom:15px;
+font-size:15px;
+}
+
+/* CONTACT FLEX CONTAINER */
+.contact-flex-container{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap; /* for mobile */
+}
+
+/* Contact Box */
+.contact-box{
+    flex:1 1 400px; /* takes most space */
+    padding:25px;
+    background:#f4f4f4;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Map next to contact box */
+.contact-map{
+    flex:0 0 400px; /* fixed width on desktop */
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.contact-map iframe{
+    border-radius:8px;
+}
+
+/* CATALOG IMAGE MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:1000;
+  padding-top:60px;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin:auto;
+  display:block;
+  max-width:90%;
+  max-height:80%;
+  border-radius:6px;
+}
+
+.modal-close {
+  position:absolute;
+  top:20px;
+  right:35px;
+  color:#fff;
+  font-size:40px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.modal-close:hover {
+  color:#ccc;
+}
+
+/* Make links look like normal text but still clickable */
+a {
+    color: inherit;      /* uses the text color of the surrounding element */
+    text-decoration: none; /* removes underline */
+    transition: 0.3s;
+}
+
+/* Optional: subtle hover effect to show it's clickable */
+a:hover {
+    color: #007f5f; /* or a slightly darker/lighter shade of your green */
+    text-decoration: underline; /* optional: only on hover */
+}
+
+/* Header company name font */
+header .logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight:430; /* optional, makes it bold */
+    font-size: 28px; /* adjust size as needed */
+    letter-spacing: 0.5px; /* optional, subtle spacing */
+    margin: 0; /* keep it tight with header layout */
+}
+
+/* About Section - cleaner spacing */
+.section p {
+    line-height: 1.8;      /* more spacing between lines */
+    margin-bottom: 20px;    /* space between paragraphs */
+    font-size: 16px;        /* slightly larger for readability */
+}
+
+.section ul {
+    margin: 15px 0 25px 20px;  /* top & bottom spacing + indent */
+    line-height: 1.7;           /* spacing between bullet lines */
+}
+
+.section ul li {
+    margin-bottom: 12px;  /* space between bullets */
+}
+
+/* About section bullet points - bold but same font as body */
+.section ul li strong {
+    font-family: 'IBM Plex Serif', serif;  /* same as body text */
+    font-weight: 600;                      /* slightly heavier for emphasis */
+}
+
+/* About section left-aligned button */
+.section .about-btn {
+    display: inline-block;   /* keeps it inline like normal button */
+    margin-top: 20px;        /* spacing from paragraph */
+    background: #2aa52a;     /* same green as other buttons */
+    color: white;            /* text color stays white */
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.section .about-btn:hover {
+    transform: scale(1.07);
+    background: #1d781d;    /* same hover green as other buttons */
+    color: white;            /* text color stays same on hover */
+}
+
+/* PHOTO SLIDER */
+
+.photo-slider-section{
+overflow:hidden;
+background:#ffffff;
+padding:40px 0;
+}
+
+.photo-slider{
+display:flex;
+gap:40px;
+width:max-content;
+animation:photoslide 25s linear infinite;
+}
+
+.photo-slider img{
+height:180px;
+width:auto;
+border-radius:6px;
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.photo-slider img:hover{
+transform:scale(1.05);
+}
+
+@keyframes photoslide{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* Brand name bottom about us */
+.brand-name{
+font-family: 'Playfair Display', serif;
+font-weight: 400;
+}
+
+
+/* Privacy policy tighter spacing */
+
+.privacy-page p{
+line-height:1.2;
+margin-bottom:10px;
+}
+
+.privacy-page ul{
+margin:10px 0 15px 20px;
+}
+
+.privacy-page ul li{
+margin-bottom:6px;
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:26px;
+}
+
+header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav{
+margin-top:10px;
+}
+
+}
